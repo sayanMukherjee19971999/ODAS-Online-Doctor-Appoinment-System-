@@ -18,4 +18,5 @@ public interface DoctorService {
     public AppoinmentDate updateAppoinmentDate(int id, AppoinmentDate date);
 
     public void deleteDoctor(int id);
+
 }

@@ -8,7 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -41,7 +41,11 @@ public class Doctor {
     private String password;
     private String retypePassword;
 
+    @Lob
+    private byte[] data;
+
     @OneToMany(cascade = CascadeType.ALL, targetEntity = AppoinmentDate.class, mappedBy = "doctor", fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<AppoinmentDate> appDate;
+
 }
